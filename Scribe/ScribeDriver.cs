@@ -8,7 +8,7 @@ namespace Scribe
 {
     static class ScribeDriver
     {
-        /// <name>Main</name>
+        /// <name>ScribeDriver::Main</name>
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -30,7 +30,7 @@ namespace Scribe
             Application.Run();
         }
 
-        ///<name>FormClosed</name>
+        ///<name>ScribeDriver::FormClosed</name>
         /// <summary>
         /// Called when the first form in Applications OpenForm data structure is closed.
         /// If there are any windows left open a new FormClosedEventHandler is created to
