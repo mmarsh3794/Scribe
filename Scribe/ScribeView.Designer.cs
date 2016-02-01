@@ -1,6 +1,6 @@
 ﻿namespace Scribe
 {
-    partial class Document
+    partial class ScribeView
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Document));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ScribeView));
             this.m_rtbDoc = new System.Windows.Forms.RichTextBox();
             this.m_mnuBar = new System.Windows.Forms.MenuStrip();
             this.m_mnuFile = new System.Windows.Forms.ToolStripMenuItem();
@@ -55,6 +55,7 @@
             this.m_rtbDoc.Size = new System.Drawing.Size(547, 315);
             this.m_rtbDoc.TabIndex = 0;
             this.m_rtbDoc.Text = "";
+            this.m_rtbDoc.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.RtbDoc_LinkClicked);
             // 
             // m_mnuBar
             // 
@@ -87,7 +88,7 @@
             // 
             this.m_mnuFileNew.Name = "m_mnuFileNew";
             this.m_mnuFileNew.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
-            this.m_mnuFileNew.Size = new System.Drawing.Size(146, 22);
+            this.m_mnuFileNew.Size = new System.Drawing.Size(152, 22);
             this.m_mnuFileNew.Text = "New";
             this.m_mnuFileNew.Click += new System.EventHandler(this.MnuFileNew_Click);
             // 
@@ -95,7 +96,7 @@
             // 
             this.m_mnuFileOpen.Name = "m_mnuFileOpen";
             this.m_mnuFileOpen.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.m_mnuFileOpen.Size = new System.Drawing.Size(146, 22);
+            this.m_mnuFileOpen.Size = new System.Drawing.Size(152, 22);
             this.m_mnuFileOpen.Text = "Open";
             this.m_mnuFileOpen.Click += new System.EventHandler(this.MnuFileOpen_Click);
             // 
@@ -103,51 +104,53 @@
             // 
             this.m_mnuFileSave.Name = "m_mnuFileSave";
             this.m_mnuFileSave.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.m_mnuFileSave.Size = new System.Drawing.Size(146, 22);
+            this.m_mnuFileSave.Size = new System.Drawing.Size(152, 22);
             this.m_mnuFileSave.Text = "Save";
+            this.m_mnuFileSave.Click += new System.EventHandler(this.MnuFileSave_Click);
             // 
             // m_mnuFileSaveAs
             // 
             this.m_mnuFileSaveAs.Name = "m_mnuFileSaveAs";
-            this.m_mnuFileSaveAs.Size = new System.Drawing.Size(146, 22);
+            this.m_mnuFileSaveAs.Size = new System.Drawing.Size(152, 22);
             this.m_mnuFileSaveAs.Text = "Save As";
+            this.m_mnuFileSaveAs.Click += new System.EventHandler(this.MnuFileSaveAs_Click);
             // 
             // m_mnuFileSep1
             // 
             this.m_mnuFileSep1.Name = "m_mnuFileSep1";
-            this.m_mnuFileSep1.Size = new System.Drawing.Size(143, 6);
+            this.m_mnuFileSep1.Size = new System.Drawing.Size(149, 6);
             // 
             // m_mnuFilePageSetup
             // 
             this.m_mnuFilePageSetup.Name = "m_mnuFilePageSetup";
-            this.m_mnuFilePageSetup.Size = new System.Drawing.Size(146, 22);
+            this.m_mnuFilePageSetup.Size = new System.Drawing.Size(152, 22);
             this.m_mnuFilePageSetup.Text = "Page Setup";
             // 
             // m_mnuFilePrintPreview
             // 
             this.m_mnuFilePrintPreview.Name = "m_mnuFilePrintPreview";
-            this.m_mnuFilePrintPreview.Size = new System.Drawing.Size(146, 22);
+            this.m_mnuFilePrintPreview.Size = new System.Drawing.Size(152, 22);
             this.m_mnuFilePrintPreview.Text = "Print Preview";
             // 
             // m_mnuFilePrint
             // 
             this.m_mnuFilePrint.Name = "m_mnuFilePrint";
             this.m_mnuFilePrint.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
-            this.m_mnuFilePrint.Size = new System.Drawing.Size(146, 22);
+            this.m_mnuFilePrint.Size = new System.Drawing.Size(152, 22);
             this.m_mnuFilePrint.Text = "Print";
             // 
             // m_mnuFileSep2
             // 
             this.m_mnuFileSep2.Name = "m_mnuFileSep2";
-            this.m_mnuFileSep2.Size = new System.Drawing.Size(143, 6);
+            this.m_mnuFileSep2.Size = new System.Drawing.Size(149, 6);
             // 
             // m_mnuFileExit
             // 
             this.m_mnuFileExit.Name = "m_mnuFileExit";
-            this.m_mnuFileExit.Size = new System.Drawing.Size(146, 22);
+            this.m_mnuFileExit.Size = new System.Drawing.Size(152, 22);
             this.m_mnuFileExit.Text = "Exit";
             // 
-            // Document
+            // ScribeView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -157,7 +160,7 @@
             this.Controls.Add(this.m_mnuBar);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.m_mnuBar;
-            this.Name = "Document";
+            this.Name = "ScribeView";
             this.Text = "Untitled - Scribe";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.m_mnuBar.ResumeLayout(false);

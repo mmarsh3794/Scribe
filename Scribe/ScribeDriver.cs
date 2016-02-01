@@ -22,7 +22,7 @@ namespace Scribe
             Application.SetCompatibleTextRenderingDefault(false);
 
             // Creates a new fourm, sets up a closed form listener, and displays it to the console.
-            var main = new Document();
+            var main = new ScribeView();
             main.FormClosed += new FormClosedEventHandler(FormClosed);
             main.Show();
 
