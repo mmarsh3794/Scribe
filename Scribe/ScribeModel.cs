@@ -11,6 +11,9 @@ namespace Scribe
         // Name of the file that stores the document the user is editing
         private string m_fileName;
 
+        // Used to determine if an additional page exists when the document is sent to the printer
+        private int m_checkPrint;
+
         ///<name>ScribeModel::ScribeModel()</name>
         /// <summary>
         /// Creates an instance of ScribeModel where the user started a new document
@@ -39,7 +42,7 @@ namespace Scribe
 
         /// <name>ScribeModel::FileName</name>
         /// <summary>
-        /// FileName Property represents the name of the file the user is currently editing
+        /// FileName property represents the name of the file the user is currently editing
         /// </summary>
         /// <value>The FileName property gets/sets the value of the string m_fileName</value>
         /// <author>Michel Marsh</author>
@@ -56,6 +59,28 @@ namespace Scribe
             set
             {
                 m_fileName = value;
+            }
+        }
+
+        /// <name>ScribeModel::CheckPrint</name>
+        /// <summary>
+        /// CheckPrint property represents whether any more pages need to be printed
+        /// </summary>
+        /// <value>The CheckPrint property gets/sets the value of the string m_checkPrint</value>
+        /// <author>Michel Marsh</author>
+        /// <date>9:49pm 2/15/2016</date>
+        public int CheckPrint
+        {
+            // Returns the last character that was printed
+            get
+            {
+                return m_checkPrint;
+            }
+
+            // Sets the value of m_checkPrint to the last character that was printed
+            set
+            {
+                m_checkPrint = value;
             }
         }
 

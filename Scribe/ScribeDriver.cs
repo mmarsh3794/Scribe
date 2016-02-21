@@ -39,7 +39,7 @@ namespace Scribe
         /// </summary>
         /// <param name="a_sender">Refers to the form that was closed</param>
         /// <param name="a_args">Contains data from the form closing</param>
-        /// <author>Michael Marsh</author>
+        /// <author>Hans Passant</author>
         /// <date>9:50pm 1/24/2016</date>
         static void FormClosed(object a_sender, FormClosedEventArgs a_args)
         {
@@ -47,12 +47,10 @@ namespace Scribe
             ((Form)a_sender).FormClosed -= FormClosed;
 
             // If there are no more open forms, close the application
-            if (Application.OpenForms.Count == 0) 
-                Application.ExitThread();
+            if (Application.OpenForms.Count == 0) Application.ExitThread();
 
             // Else set up a new closed form listener to the first of OpenForms
-            else 
-                Application.OpenForms[0].FormClosed += FormClosed;
+            else Application.OpenForms[0].FormClosed += FormClosed;
         }
     }
 }
