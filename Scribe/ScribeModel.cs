@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Scribe
 {
-    class ScribeModel
+    public class ScribeModel
     {
         // Name of the file that stores the document the user is editing
         private string m_fileName;
