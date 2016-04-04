@@ -58,6 +58,13 @@
             this.m_mnuEditGoTo = new System.Windows.Forms.ToolStripMenuItem();
             this.m_mnuEditSep4 = new System.Windows.Forms.ToolStripSeparator();
             this.m_mnuEditTimeDate = new System.Windows.Forms.ToolStripMenuItem();
+            this.m_mnuFont = new System.Windows.Forms.ToolStripMenuItem();
+            this.m_mnuFontStyle = new System.Windows.Forms.ToolStripMenuItem();
+            this.m_mnuFontColor = new System.Windows.Forms.ToolStripMenuItem();
+            this.m_mnuFontSep = new System.Windows.Forms.ToolStripSeparator();
+            this.m_mnuFontBold = new System.Windows.Forms.ToolStripMenuItem();
+            this.m_mnuFontItalic = new System.Windows.Forms.ToolStripMenuItem();
+            this.m_mnuFontUnderline = new System.Windows.Forms.ToolStripMenuItem();
             this.m_rtbDoc = new RichTextBoxPrintCtrl.RichTextBoxPrintCtrl();
             this.m_mnuBar.SuspendLayout();
             this.SuspendLayout();
@@ -66,7 +73,8 @@
             // 
             this.m_mnuBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.m_mnuFile,
-            this.m_mnuEdit});
+            this.m_mnuEdit,
+            this.m_mnuFont});
             this.m_mnuBar.Location = new System.Drawing.Point(0, 0);
             this.m_mnuBar.Name = "m_mnuBar";
             this.m_mnuBar.Size = new System.Drawing.Size(547, 24);
@@ -308,6 +316,59 @@
             this.m_mnuEditTimeDate.Text = "Time/Date";
             this.m_mnuEditTimeDate.Click += new System.EventHandler(this.MnuEditTimeDate_Click);
             // 
+            // m_mnuFont
+            // 
+            this.m_mnuFont.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.m_mnuFontStyle,
+            this.m_mnuFontColor,
+            this.m_mnuFontSep,
+            this.m_mnuFontBold,
+            this.m_mnuFontItalic,
+            this.m_mnuFontUnderline});
+            this.m_mnuFont.Name = "m_mnuFont";
+            this.m_mnuFont.Size = new System.Drawing.Size(43, 20);
+            this.m_mnuFont.Text = "Font";
+            // 
+            // m_mnuFontStyle
+            // 
+            this.m_mnuFontStyle.Name = "m_mnuFontStyle";
+            this.m_mnuFontStyle.Size = new System.Drawing.Size(152, 22);
+            this.m_mnuFontStyle.Text = "Font Style";
+            this.m_mnuFontStyle.Click += new System.EventHandler(this.MnuFontStyle_Click);
+            // 
+            // m_mnuFontColor
+            // 
+            this.m_mnuFontColor.Name = "m_mnuFontColor";
+            this.m_mnuFontColor.Size = new System.Drawing.Size(152, 22);
+            this.m_mnuFontColor.Text = "Font Color";
+            this.m_mnuFontColor.Click += new System.EventHandler(this.MnuFontColor_Click);
+            // 
+            // m_mnuFontSep
+            // 
+            this.m_mnuFontSep.Name = "m_mnuFontSep";
+            this.m_mnuFontSep.Size = new System.Drawing.Size(149, 6);
+            // 
+            // m_mnuFontBold
+            // 
+            this.m_mnuFontBold.Name = "m_mnuFontBold";
+            this.m_mnuFontBold.Size = new System.Drawing.Size(152, 22);
+            this.m_mnuFontBold.Text = "Bold";
+            this.m_mnuFontBold.Click += new System.EventHandler(this.MnuFontBold_Click);
+            // 
+            // m_mnuFontItalic
+            // 
+            this.m_mnuFontItalic.Name = "m_mnuFontItalic";
+            this.m_mnuFontItalic.Size = new System.Drawing.Size(152, 22);
+            this.m_mnuFontItalic.Text = "Italic";
+            this.m_mnuFontItalic.Click += new System.EventHandler(this.MnuFontItalic_Click);
+            // 
+            // m_mnuFontUnderline
+            // 
+            this.m_mnuFontUnderline.Name = "m_mnuFontUnderline";
+            this.m_mnuFontUnderline.Size = new System.Drawing.Size(152, 22);
+            this.m_mnuFontUnderline.Text = "Underline";
+            this.m_mnuFontUnderline.Click += new System.EventHandler(this.MnuFontUnderline_Click);
+            // 
             // m_rtbDoc
             // 
             m_rtbDoc.AcceptsTab = true;
@@ -376,6 +437,13 @@
         private System.Windows.Forms.ToolStripMenuItem m_mnuEditGoTo;
         private System.Windows.Forms.ToolStripSeparator m_mnuEditSep4;
         private System.Windows.Forms.ToolStripMenuItem m_mnuEditTimeDate;
+        private System.Windows.Forms.ToolStripMenuItem m_mnuFont;
+        private System.Windows.Forms.ToolStripMenuItem m_mnuFontStyle;
+        private System.Windows.Forms.ToolStripMenuItem m_mnuFontColor;
+        private System.Windows.Forms.ToolStripSeparator m_mnuFontSep;
+        private System.Windows.Forms.ToolStripMenuItem m_mnuFontBold;
+        private System.Windows.Forms.ToolStripMenuItem m_mnuFontItalic;
+        private System.Windows.Forms.ToolStripMenuItem m_mnuFontUnderline;
     }
 }
 
