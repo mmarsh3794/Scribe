@@ -70,6 +70,7 @@
             // 
             // m_cancelBtn
             // 
+            this.m_cancelBtn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.m_cancelBtn.Location = new System.Drawing.Point(301, 42);
             this.m_cancelBtn.Name = "m_cancelBtn";
             this.m_cancelBtn.Size = new System.Drawing.Size(75, 23);
@@ -121,10 +122,12 @@
             this.m_matchCaseCheckBox.Text = "Match Case";
             this.m_matchCaseCheckBox.UseVisualStyleBackColor = true;
             // 
-            // FindForm
+            // FindView
             // 
+            this.AcceptButton = this.m_fndNxtBtn;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.m_cancelBtn;
             this.ClientSize = new System.Drawing.Size(399, 110);
             this.Controls.Add(this.m_matchCaseCheckBox);
             this.Controls.Add(this.m_dirGroupBox);
@@ -135,10 +138,10 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "FindForm";
+            this.Name = "FindView";
             this.ShowIcon = false;
             this.Text = "Find";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FindForm_FormClosing);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FindView_FormClosing);
             this.m_dirGroupBox.ResumeLayout(false);
             this.m_dirGroupBox.PerformLayout();
             this.ResumeLayout(false);

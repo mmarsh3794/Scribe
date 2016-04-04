@@ -21,7 +21,8 @@ namespace Scribe
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            // Creates a new fourm, sets up a closed form listener, and displays it to the console.
+            // Creates a new fourm, sets up a closed form listener, and displays 
+            // it to the console.
             var main = new ScribeView();
             main.FormClosed += new FormClosedEventHandler(FormClosed);
             main.Show();
@@ -32,14 +33,14 @@ namespace Scribe
 
         ///<name>ScribeDriver::FormClosed</name>
         /// <summary>
-        /// Called when the first form in Applications OpenForm data structure is closed.
-        /// If there are any windows left open a new FormClosedEventHandler is created to
-        /// the new first of OpenForms, however if there are no more open forms, the
-        /// application terminates.
+        /// Called when the first form in Applications OpenForm data structure 
+        /// is closed. If there are any windows left open a new 
+        /// FormClosedEventHandler is created to the new first of OpenForms, 
+        /// however if there are no more open forms, the application terminates.
         /// </summary>
         /// <param name="a_sender">Refers to the form that was closed</param>
         /// <param name="a_args">Contains data from the form closing</param>
-        /// <author>Hans Passant</author>
+        /// <author>Michael Marsh</author>
         /// <date>9:50pm 1/24/2016</date>
         static void FormClosed(object a_sender, FormClosedEventArgs a_args)
         {
@@ -47,10 +48,16 @@ namespace Scribe
             ((Form)a_sender).FormClosed -= FormClosed;
 
             // If there are no more open forms, close the application
-            if (Application.OpenForms.Count == 0) Application.ExitThread();
+            if (Application.OpenForms.Count == 0)
+            {
+                Application.ExitThread();
+            }
 
             // Else set up a new closed form listener to the first of OpenForms
-            else Application.OpenForms[0].FormClosed += FormClosed;
+            else
+            {
+                Application.OpenForms[0].FormClosed += FormClosed;
+            }
         }
     }
 }

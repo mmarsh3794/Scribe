@@ -54,6 +54,19 @@
     <Compile Include="FindView.Designer.cs">
       <DependentUpon>FindView.cs</DependentUpon>
     </Compile>
+    <Compile Include="GoToForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GoToForm.Designer.cs">
+      <DependentUpon>GoToForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReplaceModel.cs" />
+    <Compile Include="ReplaceView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReplaceView.Designer.cs">
+      <DependentUpon>ReplaceView.cs</DependentUpon>
+    </Compile>
     <Compile Include="ScribeModel.cs" />
     <Compile Include="ScribeView.cs">
       <SubType>Form</SubType>
@@ -65,6 +78,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FindView.resx">
       <DependentUpon>FindView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GoToForm.resx">
+      <DependentUpon>GoToForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReplaceView.resx">
+      <DependentUpon>ReplaceView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ScribeView.resx">
       <DependentUpon>ScribeView.cs</DependentUpon>

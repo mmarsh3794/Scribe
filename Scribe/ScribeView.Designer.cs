@@ -279,17 +279,21 @@
             // 
             // m_mnuEditReplace
             // 
+            this.m_mnuEditReplace.Enabled = false;
             this.m_mnuEditReplace.Name = "m_mnuEditReplace";
             this.m_mnuEditReplace.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.H)));
             this.m_mnuEditReplace.Size = new System.Drawing.Size(164, 22);
             this.m_mnuEditReplace.Text = "Replace";
+            this.m_mnuEditReplace.Click += new System.EventHandler(this.MnuEditReplace_Click);
             // 
             // m_mnuEditGoTo
             // 
+            this.m_mnuEditGoTo.Enabled = false;
             this.m_mnuEditGoTo.Name = "m_mnuEditGoTo";
             this.m_mnuEditGoTo.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.G)));
             this.m_mnuEditGoTo.Size = new System.Drawing.Size(164, 22);
             this.m_mnuEditGoTo.Text = "Go To";
+            this.m_mnuEditGoTo.Click += new System.EventHandler(this.MnuEditGoTo_Click);
             // 
             // m_mnuEditSep4
             // 
@@ -372,11 +376,6 @@
         private System.Windows.Forms.ToolStripMenuItem m_mnuEditGoTo;
         private System.Windows.Forms.ToolStripSeparator m_mnuEditSep4;
         private System.Windows.Forms.ToolStripMenuItem m_mnuEditTimeDate;
-
-
-
-
-
     }
 }
 

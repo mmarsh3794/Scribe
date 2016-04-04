@@ -8,15 +8,25 @@ namespace Scribe
 {
     public class ScribeModel
     {
+        // **********************************************************************
+        // ************************** Class Variables ***************************
+        // **********************************************************************
+
         // Name of the file that stores the document the user is editing
         private string m_fileName;
 
-        // Used to determine if an additional page exists when the document is sent to the printer
+        // Used to determine if an additional page exists when the document is 
+        // sent to the printer
         private int m_checkPrint;
+
+        // **********************************************************************
+        // **************************** Constructors ****************************
+        // **********************************************************************
 
         ///<name>ScribeModel::ScribeModel()</name>
         /// <summary>
-        /// Creates an instance of ScribeModel where the user started a new document
+        /// Creates an instance of ScribeModel where the user started a new 
+        /// document
         /// </summary>
         /// <author>Michael Marsh</author>
         /// <date>4:26pm 1/26/2016</date>
@@ -28,9 +38,12 @@ namespace Scribe
 
         /// <name>ScribeModel::ScribeModel(a_fileName)</name>
         /// <summary>
-        /// Creates an instance of ScribeModel where the user loaded in a document
+        /// Creates an instance of ScribeModel where the user loaded in 
+        /// a document
         /// </summary>
-        /// <param name="a_fileName"> String holding the name of the file the user is editing</param>
+        /// <param name="a_fileName"> 
+        /// String holding the name of the file the user is editing
+        /// </param>
         /// <author>Michael Marsh</author>
         /// <date>4:24pm 1/26/2016</date>
         public ScribeModel(string a_fileName)
@@ -39,12 +52,18 @@ namespace Scribe
             m_fileName = a_fileName;
         }
 
+        // **********************************************************************
+        // ***************************** Properties *****************************
+        // **********************************************************************
 
         /// <name>ScribeModel::FileName</name>
         /// <summary>
-        /// FileName property represents the name of the file the user is currently editing
+        /// FileName property represents the name of the file the user is 
+        /// currently editing
         /// </summary>
-        /// <value>The FileName property gets/sets the value of the string m_fileName</value>
+        /// <value>
+        /// The FileName property gets/sets the value of the string m_fileName
+        /// </value>
         /// <author>Michel Marsh</author>
         /// <date>4:45pm 1/26/2016</date>
         public string FileName
@@ -55,7 +74,8 @@ namespace Scribe
                 return m_fileName;
             }
 
-            // Sets the name of the file the user is editing to the parameter passed to it
+            // Sets the name of the file the user is editing to the parameter 
+            // passed to it
             set
             {
                 m_fileName = value;
@@ -64,9 +84,12 @@ namespace Scribe
 
         /// <name>ScribeModel::CheckPrint</name>
         /// <summary>
-        /// CheckPrint property represents whether any more pages need to be printed
+        /// CheckPrint property represents whether any more pages need to be 
+        /// printed
         /// </summary>
-        /// <value>The CheckPrint property gets/sets the value of the string m_checkPrint</value>
+        /// <value>
+        /// The CheckPrint property gets/sets the value of the string m_checkPrint
+        /// </value>
         /// <author>Michel Marsh</author>
         /// <date>9:49pm 2/15/2016</date>
         public int CheckPrint
@@ -77,12 +100,17 @@ namespace Scribe
                 return m_checkPrint;
             }
 
-            // Sets the value of m_checkPrint to the last character that was printed
+            // Sets the value of m_checkPrint to the last character that 
+            // was printed
             set
             {
                 m_checkPrint = value;
             }
         }
+
+        // **********************************************************************
+        // *************************** Utility Methods **************************
+        // **********************************************************************
 
         /// <name>ScribeModel::GetFileExtension</name>
         /// <summary>
@@ -98,19 +126,23 @@ namespace Scribe
 
         /// <name>ScribeModel::TrimFileName</name>
         /// <summary>
-        /// Takes a file name and returns a string with all the directors from the file
-        /// removed, leaving only the name of the file and its extension
+        /// Takes a file name and returns a string with all the directors from 
+        /// the file removed, leaving only the name of the file and its extension
         /// </summary>
         /// <param name="a_fileName">
-        /// String containing the name of the file containing an unspecified number of directories
+        /// String containing the name of the file containing an unspecified 
+        /// number of directories
         /// </param>
-        /// <returns>String containing only the name of the file and the extension</returns>
+        /// <returns>
+        /// String containing only the name of the file and the extension
+        /// </returns>
         /// <author>Michael Marsh</author>
         /// <date>2:54pm 1/26/2016</date>
         public string TrimFileName(string a_fileName)
         {
-            // Takes the last index of \\, everything before that being directories, and uses
-            // it to return the file name with all the directories from it
+            // Takes the last index of \\, everything before that being 
+            // directories, and uses it to return the file name with all the 
+            // directories from it
             return a_fileName.Remove(0, a_fileName.LastIndexOf("\\") + 1);
         }
     }

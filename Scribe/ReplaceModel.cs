@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Scribe
 {
-    public class FindModel
+    public class ReplaceModel
     {
         // **********************************************************************
         // ************************** Class Variables ***************************
@@ -19,52 +19,53 @@ namespace Scribe
         // Holds the current saved string the user is searching for
         private String m_searchText;
 
+        // Holds the current saved string the user is replacing the search 
+        // text with
+        private String m_replaceText;
+
         // Holds whether mach case searching is enabled or disabled
         private Boolean m_matchCase;
-
-        // Holds whether the user will be searching down or up
-        private Boolean m_searchDown;
 
         // **********************************************************************
         // **************************** Constructor *****************************
         // **********************************************************************
 
-        /// <name>FindModel::FindModel</name>
+        /// <name>ReplaceModel::ReplaceModel</name>
         /// <summary>
-        /// Default constructor for the FindModel Class that holds all of the 
-        /// information needed for the FindView Class
+        /// Default constructor for the ReplaceModel Class that holds all of 
+        /// the information needed for the ReplaceView Class
         /// </summary>
         /// <author>Michel Marsh</author>
-        /// <date>7:40pm 3/28/2016</date>
-        public FindModel()
+        /// <date>7:22pm 4/03/2016</date>
+        public ReplaceModel()
         {
             // Set the initial class parameter to false, since we want the form 
             // to be hidden until the main document is closed
             m_closeForm = false;
 
-            // Initialize the default state of the program which is that a blank 
-            // search string where the user wants a non-case sensitive search down 
-            // the document
+            // Initialize the default state of the form which is that a blank 
+            // search string where the user wants a non-case sensitive search 
+            // down the document
             m_searchText = "";
+            m_replaceText = "";
             m_matchCase = false;
-            m_searchDown = true;
         }
 
         // **********************************************************************
         // ***************************** Properties *****************************
         // **********************************************************************
 
-        /// <name>FindModel::CloseForm</name>
+        /// <name>ReplaceModel::CloseForm</name>
         /// <summary>
         /// CloseForm property represents whether the form should be closed or 
         /// hidden when the FormClosing event is prompted 
         /// </summary>
         /// <value>
-        /// The CloseForm property gets/sets the whether the form should be 
-        /// closed or hidden
+        /// The CloseForm property gets/sets the whether the form should 
+        /// be closed or hidden
         /// </value>
         /// <author>Michel Marsh</author>
-        /// <date>7:44pm 3/28/2016</date>
+        /// <date>7:24pm 4/03/2016</date>
         public Boolean CloseForm
         {
             // Returns whether the form should be closed or hidden
@@ -80,17 +81,17 @@ namespace Scribe
             }
         }
 
-        /// <name>FindModel::SearchText</name>
+        /// <name>ReplaceModel::SearchText</name>
         /// <summary>
         /// SearchText property represents the saved text that the user is 
         /// searching for in the document they are currently editing
         /// </summary>
         /// <value>
-        /// The SearchText property gets/sets the saved substring the user is 
-        /// searching in the text
+        /// The SearchText property gets/sets the saved substring the user 
+        /// is searching in the text
         /// </value>
         /// <author>Michel Marsh</author>
-        /// <date>10:15pm 3/28/2016</date>
+        /// <date>7:26pm 4/03/2016</date>
         public String SearchText
         {
             // Returns the saved substring the user is searching for in the 
@@ -107,17 +108,45 @@ namespace Scribe
             }
         }
 
-        /// <name>FindModel::MatchCase</name>
+        /// <name>ReplaceModel::ReplaceText</name>
         /// <summary>
-        /// MatchCase property represents whether the user wants to enable/disable
-        /// case sensitive searching
+        /// ReplaceText property represents the saved text that wants to replace 
+        /// the search text with in the document they are currently editing
+        /// </summary>
+        /// <value>
+        /// The ReplaceText property gets/sets the saved substring the user 
+        /// wants to replace the search text with
+        /// </value>
+        /// <author>Michel Marsh</author>
+        /// <date>7:30pm 4/03/2016</date>
+        public String ReplaceText
+        {
+            // Returns the saved substring the user wants to replace the search 
+            // text with
+            get
+            {
+                return m_replaceText;
+            }
+
+            // Sets the saved substring the user wants to replace the search 
+            // text with
+            set
+            {
+                m_replaceText = value;
+            }
+        }
+
+        /// <name>ReplaceModel::MatchCase</name>
+        /// <summary>
+        /// MatchCase property represents whether the user wants to 
+        /// enable/disable case sensitive searching
         /// </summary>
         /// <value>
         /// The MatchCase property gets/sets the whether to enable or 
         /// disable case sensitive searching
         /// </value>
         /// <author>Michel Marsh</author>
-        /// <date>10:17pm 3/28/2016</date>
+        /// <date>7:28pm 4/03/2016</date>
         public Boolean MatchCase
         {
             // Gets whether to enable/disable case sensitive searching
@@ -130,34 +159,6 @@ namespace Scribe
             set
             {
                 m_matchCase = value;
-            }
-        }
-
-        /// <name>FindModel::SearchDown</name>
-        /// <summary>
-        /// SearchDown property represents whether the user wants to search down 
-        /// or up from the current cursor position
-        /// </summary>
-        /// <value>
-        /// The SearchDown property gets/sets the whether to search down or 
-        /// up from the current cursor position
-        /// </value>
-        /// <author>Michel Marsh</author>
-        /// <date>10:19pm 3/28/2016</date>
-        public Boolean SearchDown
-        {
-            // Gets whether the user wants to search down or up from the 
-            // current cursor position
-            get
-            {
-                return m_searchDown;
-            }
-
-            // Sets whether the user wants to search down or up from the 
-            // current cursor position
-            set
-            {
-                m_searchDown = value;
             }
         }
     }
