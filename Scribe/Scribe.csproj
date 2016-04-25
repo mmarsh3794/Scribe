@@ -32,6 +32,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CustomFontDialog">
+      <HintPath>..\..\..\CustomFontDialog-0.2.0\CustomFontDialog-0.2.0\CustomFontDialog\bin\Release\CustomFontDialog.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationFramework" />
     <Reference Include="RichTextBoxPrintCtrl">
       <HintPath>..\..\..\RichTextBoxPrintCtrl\RichTextBoxPrintCtrl\bin\Debug\RichTextBoxPrintCtrl.dll</HintPath>
     </Reference>
@@ -54,6 +58,7 @@
     <Compile Include="FindView.Designer.cs">
       <DependentUpon>FindView.cs</DependentUpon>
     </Compile>
+    <Compile Include="FontCombo.cs" />
     <Compile Include="GoToForm.cs">
       <SubType>Form</SubType>
     </Compile>
