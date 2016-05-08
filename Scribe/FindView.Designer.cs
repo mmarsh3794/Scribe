@@ -140,7 +140,10 @@
             this.MinimizeBox = false;
             this.Name = "FindView";
             this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.Text = "Find";
+            this.TopMost = true;
+            this.Deactivate += new System.EventHandler(this.FindView_Deactivate);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FindView_FormClosing);
             this.m_dirGroupBox.ResumeLayout(false);
             this.m_dirGroupBox.PerformLayout();

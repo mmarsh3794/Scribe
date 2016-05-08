@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ScribeView));
             this.m_scribeTableLayout = new System.Windows.Forms.TableLayoutPanel();
             this.m_mnuBar = new System.Windows.Forms.MenuStrip();
@@ -74,6 +75,8 @@
             this.m_mnuParaAlignLeft = new System.Windows.Forms.ToolStripMenuItem();
             this.m_mnuParaAlignCenter = new System.Windows.Forms.ToolStripMenuItem();
             this.m_mnuParaAlignRight = new System.Windows.Forms.ToolStripMenuItem();
+            this.m_mnuReview = new System.Windows.Forms.ToolStripMenuItem();
+            this.m_mnuReviewSpellCheck = new System.Windows.Forms.ToolStripMenuItem();
             this.m_rtbDoc = new RichTextBoxPrintCtrl.RichTextBoxPrintCtrl();
             this.m_toolStrip = new System.Windows.Forms.ToolStrip();
             this.m_newToolStripBtn = new System.Windows.Forms.ToolStripButton();
@@ -82,6 +85,22 @@
             this.m_printToolStripBtn = new System.Windows.Forms.ToolStripButton();
             this.m_toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.m_fontToolStipComboBox = new System.Windows.Forms.ToolStripComboBox();
+            this.m_fontSizeToolStripComboBox = new System.Windows.Forms.ToolStripComboBox();
+            this.m_fontColorToolStripBtn = new System.Windows.Forms.ToolStripButton();
+            this.m_toolStripSep2 = new System.Windows.Forms.ToolStripSeparator();
+            this.m_boldToolStripBtn = new System.Windows.Forms.ToolStripButton();
+            this.m_italicToolStripBtn = new System.Windows.Forms.ToolStripButton();
+            this.m_underlineToolStripBtn = new System.Windows.Forms.ToolStripButton();
+            this.m_toolStripSep3 = new System.Windows.Forms.ToolStripSeparator();
+            this.m_leftAlignToolStripBtn = new System.Windows.Forms.ToolStripButton();
+            this.m_centerAlignToolStripBtn = new System.Windows.Forms.ToolStripButton();
+            this.m_rightAlignToolStripBtn = new System.Windows.Forms.ToolStripButton();
+            this.m_toolStripSep4 = new System.Windows.Forms.ToolStripSeparator();
+            this.m_bulletsToolStripBtn = new System.Windows.Forms.ToolStripButton();
+            this.m_toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.m_spellCheckToolStripBtn = new System.Windows.Forms.ToolStripButton();
+            this.m_wordDictionary = new NetSpell.SpellChecker.Dictionary.WordDictionary(this.components);
+            this.m_spellChecker = new NetSpell.SpellChecker.Spelling(this.components);
             this.m_scribeTableLayout.SuspendLayout();
             this.m_mnuBar.SuspendLayout();
             this.m_toolStrip.SuspendLayout();
@@ -103,7 +122,7 @@
             this.m_scribeTableLayout.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.m_scribeTableLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.m_scribeTableLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.m_scribeTableLayout.Size = new System.Drawing.Size(680, 452);
+            this.m_scribeTableLayout.Size = new System.Drawing.Size(765, 452);
             this.m_scribeTableLayout.TabIndex = 3;
             // 
             // m_mnuBar
@@ -115,10 +134,11 @@
             this.m_mnuFile,
             this.m_mnuEdit,
             this.m_mnuFont,
-            this.m_mnuPara});
+            this.m_mnuPara,
+            this.m_mnuReview});
             this.m_mnuBar.Location = new System.Drawing.Point(0, 0);
             this.m_mnuBar.Name = "m_mnuBar";
-            this.m_mnuBar.Size = new System.Drawing.Size(680, 24);
+            this.m_mnuBar.Size = new System.Drawing.Size(765, 24);
             this.m_mnuBar.TabIndex = 1;
             this.m_mnuBar.Text = "menu";
             // 
@@ -473,16 +493,32 @@
             this.m_mnuParaAlignRight.Text = "Right";
             this.m_mnuParaAlignRight.Click += new System.EventHandler(this.MnuParaAlignRight_Click);
             // 
+            // m_mnuReview
+            // 
+            this.m_mnuReview.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.m_mnuReviewSpellCheck});
+            this.m_mnuReview.Name = "m_mnuReview";
+            this.m_mnuReview.Size = new System.Drawing.Size(56, 20);
+            this.m_mnuReview.Text = "Review";
+            // 
+            // m_mnuReviewSpellCheck
+            // 
+            this.m_mnuReviewSpellCheck.Enabled = false;
+            this.m_mnuReviewSpellCheck.Name = "m_mnuReviewSpellCheck";
+            this.m_mnuReviewSpellCheck.Size = new System.Drawing.Size(135, 22);
+            this.m_mnuReviewSpellCheck.Text = "Spell Check";
+            this.m_mnuReviewSpellCheck.Click += new System.EventHandler(this.MnuReviewSpellCheck_Click);
+            // 
             // m_rtbDoc
             // 
             this.m_rtbDoc.AcceptsTab = true;
             this.m_rtbDoc.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.m_rtbDoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_rtbDoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_rtbDoc.HideSelection = false;
             this.m_rtbDoc.Location = new System.Drawing.Point(20, 68);
             this.m_rtbDoc.Margin = new System.Windows.Forms.Padding(20);
             this.m_rtbDoc.Name = "m_rtbDoc";
-            this.m_rtbDoc.Size = new System.Drawing.Size(640, 364);
+            this.m_rtbDoc.Size = new System.Drawing.Size(725, 364);
             this.m_rtbDoc.TabIndex = 4;
             this.m_rtbDoc.Text = "";
             this.m_rtbDoc.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.RtbDoc_LinkClicked);
@@ -499,10 +535,24 @@
             this.m_saveToolStripBtn,
             this.m_printToolStripBtn,
             this.m_toolStripSeparator1,
-            this.m_fontToolStipComboBox});
+            this.m_fontToolStipComboBox,
+            this.m_fontSizeToolStripComboBox,
+            this.m_fontColorToolStripBtn,
+            this.m_toolStripSep2,
+            this.m_boldToolStripBtn,
+            this.m_italicToolStripBtn,
+            this.m_underlineToolStripBtn,
+            this.m_toolStripSep3,
+            this.m_leftAlignToolStripBtn,
+            this.m_centerAlignToolStripBtn,
+            this.m_rightAlignToolStripBtn,
+            this.m_toolStripSep4,
+            this.m_bulletsToolStripBtn,
+            this.m_toolStripSeparator5,
+            this.m_spellCheckToolStripBtn});
             this.m_toolStrip.Location = new System.Drawing.Point(0, 24);
             this.m_toolStrip.Name = "m_toolStrip";
-            this.m_toolStrip.Size = new System.Drawing.Size(680, 24);
+            this.m_toolStrip.Size = new System.Drawing.Size(765, 24);
             this.m_toolStrip.TabIndex = 5;
             this.m_toolStrip.Text = "toolStrip1";
             // 
@@ -559,21 +609,151 @@
             this.m_fontToolStipComboBox.DropDownWidth = 450;
             this.m_fontToolStipComboBox.IntegralHeight = false;
             this.m_fontToolStipComboBox.Name = "m_fontToolStipComboBox";
-            this.m_fontToolStipComboBox.Size = new System.Drawing.Size(121, 24);
+            this.m_fontToolStipComboBox.Size = new System.Drawing.Size(242, 24);
             this.m_fontToolStipComboBox.SelectedIndexChanged += new System.EventHandler(this.FontToolStipComboBox_SelectedIndexChanged);
+            // 
+            // m_fontSizeToolStripComboBox
+            // 
+            this.m_fontSizeToolStripComboBox.Name = "m_fontSizeToolStripComboBox";
+            this.m_fontSizeToolStripComboBox.Size = new System.Drawing.Size(75, 24);
+            this.m_fontSizeToolStripComboBox.SelectedIndexChanged += new System.EventHandler(this.FontSizeToolStripComboBox_SelectedIndexChanged);
+            this.m_fontSizeToolStripComboBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FontSizeToolStripComboBox_KeyDown);
+            // 
+            // m_fontColorToolStripBtn
+            // 
+            this.m_fontColorToolStripBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.m_fontColorToolStripBtn.Image = ((System.Drawing.Image)(resources.GetObject("m_fontColorToolStripBtn.Image")));
+            this.m_fontColorToolStripBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.m_fontColorToolStripBtn.Name = "m_fontColorToolStripBtn";
+            this.m_fontColorToolStripBtn.Size = new System.Drawing.Size(23, 21);
+            this.m_fontColorToolStripBtn.Text = "Font Color";
+            this.m_fontColorToolStripBtn.Click += new System.EventHandler(this.FontColorToolStripBtn_Click);
+            // 
+            // m_toolStripSep2
+            // 
+            this.m_toolStripSep2.Name = "m_toolStripSep2";
+            this.m_toolStripSep2.Size = new System.Drawing.Size(6, 24);
+            // 
+            // m_boldToolStripBtn
+            // 
+            this.m_boldToolStripBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.m_boldToolStripBtn.Image = ((System.Drawing.Image)(resources.GetObject("m_boldToolStripBtn.Image")));
+            this.m_boldToolStripBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.m_boldToolStripBtn.Name = "m_boldToolStripBtn";
+            this.m_boldToolStripBtn.Size = new System.Drawing.Size(23, 21);
+            this.m_boldToolStripBtn.Text = "toolStripButton2";
+            this.m_boldToolStripBtn.ToolTipText = "Bold";
+            this.m_boldToolStripBtn.Click += new System.EventHandler(this.BoldToolStripBtn_Click);
+            // 
+            // m_italicToolStripBtn
+            // 
+            this.m_italicToolStripBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.m_italicToolStripBtn.Image = ((System.Drawing.Image)(resources.GetObject("m_italicToolStripBtn.Image")));
+            this.m_italicToolStripBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.m_italicToolStripBtn.Name = "m_italicToolStripBtn";
+            this.m_italicToolStripBtn.Size = new System.Drawing.Size(23, 21);
+            this.m_italicToolStripBtn.Text = "Italic";
+            this.m_italicToolStripBtn.Click += new System.EventHandler(this.ItalicToolStripBtn_Click);
+            // 
+            // m_underlineToolStripBtn
+            // 
+            this.m_underlineToolStripBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.m_underlineToolStripBtn.Image = ((System.Drawing.Image)(resources.GetObject("m_underlineToolStripBtn.Image")));
+            this.m_underlineToolStripBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.m_underlineToolStripBtn.Name = "m_underlineToolStripBtn";
+            this.m_underlineToolStripBtn.Size = new System.Drawing.Size(23, 21);
+            this.m_underlineToolStripBtn.Text = "Underline";
+            this.m_underlineToolStripBtn.Click += new System.EventHandler(this.UnderlineToolStripBtn_Click);
+            // 
+            // m_toolStripSep3
+            // 
+            this.m_toolStripSep3.Name = "m_toolStripSep3";
+            this.m_toolStripSep3.Size = new System.Drawing.Size(6, 24);
+            // 
+            // m_leftAlignToolStripBtn
+            // 
+            this.m_leftAlignToolStripBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.m_leftAlignToolStripBtn.Image = ((System.Drawing.Image)(resources.GetObject("m_leftAlignToolStripBtn.Image")));
+            this.m_leftAlignToolStripBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.m_leftAlignToolStripBtn.Name = "m_leftAlignToolStripBtn";
+            this.m_leftAlignToolStripBtn.Size = new System.Drawing.Size(23, 21);
+            this.m_leftAlignToolStripBtn.Text = "Left Align";
+            this.m_leftAlignToolStripBtn.Click += new System.EventHandler(this.LeftAlignToolStripBtn_Click);
+            // 
+            // m_centerAlignToolStripBtn
+            // 
+            this.m_centerAlignToolStripBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.m_centerAlignToolStripBtn.Image = ((System.Drawing.Image)(resources.GetObject("m_centerAlignToolStripBtn.Image")));
+            this.m_centerAlignToolStripBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.m_centerAlignToolStripBtn.Name = "m_centerAlignToolStripBtn";
+            this.m_centerAlignToolStripBtn.Size = new System.Drawing.Size(23, 21);
+            this.m_centerAlignToolStripBtn.Text = "Center Align";
+            this.m_centerAlignToolStripBtn.Click += new System.EventHandler(this.CenterAlignToolStripBtn_Click);
+            // 
+            // m_rightAlignToolStripBtn
+            // 
+            this.m_rightAlignToolStripBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.m_rightAlignToolStripBtn.Image = ((System.Drawing.Image)(resources.GetObject("m_rightAlignToolStripBtn.Image")));
+            this.m_rightAlignToolStripBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.m_rightAlignToolStripBtn.Name = "m_rightAlignToolStripBtn";
+            this.m_rightAlignToolStripBtn.Size = new System.Drawing.Size(23, 21);
+            this.m_rightAlignToolStripBtn.Text = "Right Align";
+            this.m_rightAlignToolStripBtn.Click += new System.EventHandler(this.m_rightAlignToolStripBtn_Click);
+            // 
+            // m_toolStripSep4
+            // 
+            this.m_toolStripSep4.Name = "m_toolStripSep4";
+            this.m_toolStripSep4.Size = new System.Drawing.Size(6, 24);
+            // 
+            // m_bulletsToolStripBtn
+            // 
+            this.m_bulletsToolStripBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.m_bulletsToolStripBtn.Image = ((System.Drawing.Image)(resources.GetObject("m_bulletsToolStripBtn.Image")));
+            this.m_bulletsToolStripBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.m_bulletsToolStripBtn.Name = "m_bulletsToolStripBtn";
+            this.m_bulletsToolStripBtn.Size = new System.Drawing.Size(23, 21);
+            this.m_bulletsToolStripBtn.Text = "Bullets";
+            this.m_bulletsToolStripBtn.Click += new System.EventHandler(this.BulletsToolStripBtn_Click);
+            // 
+            // m_toolStripSeparator5
+            // 
+            this.m_toolStripSeparator5.Name = "m_toolStripSeparator5";
+            this.m_toolStripSeparator5.Size = new System.Drawing.Size(6, 24);
+            // 
+            // m_spellCheckToolStripBtn
+            // 
+            this.m_spellCheckToolStripBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.m_spellCheckToolStripBtn.Image = ((System.Drawing.Image)(resources.GetObject("m_spellCheckToolStripBtn.Image")));
+            this.m_spellCheckToolStripBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.m_spellCheckToolStripBtn.Name = "m_spellCheckToolStripBtn";
+            this.m_spellCheckToolStripBtn.Size = new System.Drawing.Size(23, 21);
+            this.m_spellCheckToolStripBtn.Text = "Spell Check";
+            this.m_spellCheckToolStripBtn.Click += new System.EventHandler(this.SpellCheckToolStripBtn_Click);
+            // 
+            // m_wordDictionary
+            // 
+            this.m_wordDictionary.DictionaryFolder = "E:\\Computer Science Programs\\C#\\Scribe\\Scribe\\dic";
+            // 
+            // m_spellChecker
+            // 
+            this.m_spellChecker.Dictionary = this.m_wordDictionary;
+            this.m_spellChecker.DeletedWord += new NetSpell.SpellChecker.Spelling.DeletedWordEventHandler(this.SpellChecker_DeletedWord);
+            this.m_spellChecker.ReplacedWord += new NetSpell.SpellChecker.Spelling.ReplacedWordEventHandler(this.SpellChecker_ReplacedWord);
             // 
             // ScribeView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(680, 452);
+            this.ClientSize = new System.Drawing.Size(765, 452);
             this.Controls.Add(this.m_scribeTableLayout);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.m_mnuBar;
             this.Name = "ScribeView";
             this.Text = "Untitled - Scribe";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Activated += new System.EventHandler(this.ScribeView_Activated);
+            this.Deactivate += new System.EventHandler(this.ScribeView_Deactivate);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ScribeView_FormClosing);
             this.m_scribeTableLayout.ResumeLayout(false);
             this.m_scribeTableLayout.PerformLayout();
@@ -640,6 +820,24 @@
         private System.Windows.Forms.ToolStripButton m_printToolStripBtn;
         private System.Windows.Forms.ToolStripSeparator m_toolStripSeparator1;
         private System.Windows.Forms.ToolStripComboBox m_fontToolStipComboBox;
+        private System.Windows.Forms.ToolStripComboBox m_fontSizeToolStripComboBox;
+        private System.Windows.Forms.ToolStripButton m_fontColorToolStripBtn;
+        private System.Windows.Forms.ToolStripSeparator m_toolStripSep2;
+        private System.Windows.Forms.ToolStripButton m_boldToolStripBtn;
+        private System.Windows.Forms.ToolStripButton m_italicToolStripBtn;
+        private System.Windows.Forms.ToolStripButton m_underlineToolStripBtn;
+        private System.Windows.Forms.ToolStripSeparator m_toolStripSep3;
+        private System.Windows.Forms.ToolStripButton m_leftAlignToolStripBtn;
+        private System.Windows.Forms.ToolStripButton m_centerAlignToolStripBtn;
+        private System.Windows.Forms.ToolStripButton m_rightAlignToolStripBtn;
+        private System.Windows.Forms.ToolStripSeparator m_toolStripSep4;
+        private System.Windows.Forms.ToolStripButton m_bulletsToolStripBtn;
+        private System.Windows.Forms.ToolStripMenuItem m_mnuReview;
+        private System.Windows.Forms.ToolStripMenuItem m_mnuReviewSpellCheck;
+        private NetSpell.SpellChecker.Dictionary.WordDictionary m_wordDictionary;
+        private NetSpell.SpellChecker.Spelling m_spellChecker;
+        private System.Windows.Forms.ToolStripSeparator m_toolStripSeparator5;
+        private System.Windows.Forms.ToolStripButton m_spellCheckToolStripBtn;
     }
 }
 

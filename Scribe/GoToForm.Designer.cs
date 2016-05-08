@@ -88,6 +88,7 @@
             this.MinimizeBox = false;
             this.Name = "GoToForm";
             this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.Text = "Go To";
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -41,6 +41,7 @@ namespace Scribe
             // Set the initial class parameter to false, since we want the form 
             // to be hidden until the main document is closed
             m_closeForm = false;
+  
 
             // Initialize the default state of the program which is that a blank 
             // search string where the user wants a non-case sensitive search down 

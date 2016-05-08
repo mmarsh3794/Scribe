@@ -58,14 +58,6 @@
             this.m_replaceLbl.TabIndex = 1;
             this.m_replaceLbl.Text = "Replace With: ";
             // 
-            // m_findTxtBox
-            // 
-            this.m_findTxtBox.Location = new System.Drawing.Point(97, 10);
-            this.m_findTxtBox.Name = "m_findTxtBox";
-            this.m_findTxtBox.Size = new System.Drawing.Size(231, 20);
-            this.m_findTxtBox.TabIndex = 2;
-            this.m_findTxtBox.TextChanged += new System.EventHandler(this.FindTxtBox_TextChanged);
-            // 
             // m_replaceTxtBox
             // 
             this.m_replaceTxtBox.Location = new System.Drawing.Point(97, 38);
@@ -73,6 +65,14 @@
             this.m_replaceTxtBox.Size = new System.Drawing.Size(231, 20);
             this.m_replaceTxtBox.TabIndex = 3;
             this.m_replaceTxtBox.TextChanged += new System.EventHandler(this.ReplaceTxtBox_TextChanged);
+            // 
+            // m_findTxtBox
+            // 
+            this.m_findTxtBox.Location = new System.Drawing.Point(97, 10);
+            this.m_findTxtBox.Name = "m_findTxtBox";
+            this.m_findTxtBox.Size = new System.Drawing.Size(231, 20);
+            this.m_findTxtBox.TabIndex = 2;
+            this.m_findTxtBox.TextChanged += new System.EventHandler(this.FindTxtBox_TextChanged);
             // 
             // m_findBtn
             // 
@@ -149,7 +149,10 @@
             this.MinimizeBox = false;
             this.Name = "ReplaceView";
             this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.Text = "Replace";
+            this.TopMost = true;
+            this.Deactivate += new System.EventHandler(this.ReplaceView_Deactivate);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ReplaceView_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();

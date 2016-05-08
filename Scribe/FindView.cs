@@ -118,6 +118,22 @@ namespace Scribe
         // ******************** Action Performed - Controller *******************
         // **********************************************************************
 
+        /// <name>FindView::FindView_Deactivate</name>
+        /// <summary>
+        /// When this form loses focus, it sets the TopMost to false
+        /// to prevent it from appearing while the user is writing in
+        /// either another document or using another application
+        /// </summary>
+        /// <param name="a_sender">Refers to form losing focus</param>
+        /// <param name="a_args">Contains data from the deactivated form</param>
+        /// <author>Michael Marsh</author>
+        /// <date>6:22pm 5/7/2016</date>
+        private void FindView_Deactivate(object a_sender, EventArgs a_args)
+        {
+            // Set TopMost to false
+            this.TopMost = false;
+        }
+
         /// <name>FindView::FndNxtBtn_Click</name>
         /// <summary>
         /// Saves the data the user inputted into the FindForm in the 
