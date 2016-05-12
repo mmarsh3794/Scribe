@@ -730,10 +730,6 @@
             this.m_spellCheckToolStripBtn.Text = "Spell Check";
             this.m_spellCheckToolStripBtn.Click += new System.EventHandler(this.SpellCheckToolStripBtn_Click);
             // 
-            // m_wordDictionary
-            // 
-            this.m_wordDictionary.DictionaryFolder = "E:\\Computer Science Programs\\C#\\Scribe\\Scribe\\dic";
-            // 
             // m_spellChecker
             // 
             this.m_spellChecker.Dictionary = this.m_wordDictionary;
